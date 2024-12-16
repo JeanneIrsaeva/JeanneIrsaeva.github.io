@@ -12,31 +12,52 @@
   z-index: 100;
 
 
-  &__container{
+  @media @bw1660 {
+    height: 111px;
+}
+
+  @media @bw768{
+    height: 70px;
+}
+
+&__container {
     .container;
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     z-index: 1;
 }
 
-  &__logo{
-      position: relative;
-      flex-shrink: 0;
-      width: 202px;
-      height: 147px;
-      font-size: 0;
-      text-decoration: none;
-      z-index: 1;
+&__logo {
+    position: relative;
+    flex-shrink: 0;
+    width: 202px;
+    height: 147px;
+    font-size: 0;
+    text-decoration: none;
+    z-index: 1;
 
-      &-icon{
-          width: 100%;
-          height: 100%;
-      }
-  }
+    @media @bw1660 {
+        width: 152px;
+        height: 111px;
+    }
 
-  &__nav{
+    @media @bw768{
+        width: 96px;
+        height: 70px;
+    }
+
+    @media @bw400{
+        margin-left: -20px;
+    }
+}
+
+&__logo-icon {
+    width: 100%;
+    height: 100%;
+}
+
+&__nav {
     box-sizing: border-box;
     display: flex;
     align-items: baseline;
@@ -58,41 +79,39 @@
     }
 }
 
+&__nav-link,
+&__nav-user-link,
+&__nav-logout {
+    color: @black;
+    text-decoration: none;
 
-  &__nav-link,
-    &__nav-user-link,
-    &__nav-logout {
-        color: @black;
-        text-decoration: none;
-
-        &:active {
-            color: @dark_red;
-        }
-
-        &:hover {
-            color: @red;
-        }
+    &:active {
+        color: @dark_red;
     }
 
-  &__nav-link{
-      margin: 0 25px;
-      color: @black;
-      font-weight: 600;
-      font-size: 18px;
-      line-height: 25px;
-      text-decoration: none;
-      transition: color 0.2s;
+    &:hover {
+        color: @red;
+    }
+}
 
-      
-      @media @bw1020 {
+&__nav-link {
+    margin: 0 25px;
+    color: @black;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.4;
+    text-decoration: none;
+    transition: color 0.2s;
+
+    @media @bw1020 {
         box-sizing: border-box;
         margin: 0;
         padding: 5px 0;
         font-size: 16px;
     }
-  }
+}
 
-  &__nav-user-link {
+&__nav-user-link {
     display: none;
     margin-top: 30px;
     font-weight: 400;
@@ -112,8 +131,7 @@
     font-size: 0;
 }
 
-  
-  &__right-block{
+&__right-block {
     position: relative;
     display: flex;
     justify-content: flex-end;
@@ -132,7 +150,7 @@
     }
 }
 
-  &__user-btn {
+&__user-btn {
     max-width: 100%;
 
     &.btn{
