@@ -1,0 +1,322 @@
+// Стили для блока .about
+.about {
+    // Внешние отступы: 150px сверху, 0 по бокам и снизу
+    margin: 150px 0 0;
+
+    &__container {
+        // Применение стилей из миксина .container
+        .container;
+    }
+
+    &__block {
+        // Использование CSS Grid для создания сетки
+        display: grid;
+        // Определение колонок: 1 часть и 400px
+        grid-template-columns: 1fr 400px;
+        // Определение областей сетки
+        grid-template-areas:
+            "title1 title1"
+            "text1 text1"
+            "pic1 pic2"
+            "title2 pic2"
+            "text2 text2";
+        // Расстояние между элементами сетки: 50px по вертикали, 60px по горизонтали
+        gap: 50px 60px;
+
+        // для экранов шириной до 1020px
+        @media @bw1020 {
+            // Изменение колонок: 1 часть и 260px
+            grid-template-columns: 1fr 260px;
+            // Изменение областей сетки
+            grid-template-areas:
+                "title1 title1"
+                "text1 text1"
+                "pic1 pic1"
+                "title2 pic2"
+                "text2 pic2";
+            // Изменение расстояния между элементами
+            gap: 40px 27px;
+        }
+
+        // для экранов шириной до 600px
+        @media @bw600 {
+            // Изменение колонок: 1 часть и 236px
+            grid-template-columns: 1fr 236px;
+            // Изменение областей сетки
+            grid-template-areas:
+                "title1 title1"
+                "text1 text1"
+                "pic1 pic1"
+                "title2 title2"
+                "text2 text2"
+                ". pic2";
+            // Изменение расстояния между элементами
+            gap: 60px;
+        }
+    }
+
+    &__subtitle1,
+    &__subtitle2 {
+        // Убираем внешние отступы
+        margin: 0;
+        // Размер шрифта: 44px
+        font-size: 44px;
+        // Высота строки: 1.3
+        line-height: 1.3;
+
+        // для экранов шириной до 1020px
+        @media @bw1020 {
+            // Уменьшение размера шрифта до 26px
+            font-size: 26px;
+        }
+    }
+
+    &__text1,
+    &__text2 {
+        // Убираем внешние отступы
+        margin: 0;
+        // Максимальная ширина: 870px
+        max-width: 870px;
+        // Ширина: 100%
+        width: 100%;
+        // Выравнивание по правому краю
+        margin-left: auto;
+        // Высота строки: 1.3
+        line-height: 1.3;
+
+        // для экранов шириной до 600px
+        @media @bw600 {
+            // Сдвигаем текст вверх на 30px
+            margin-top: -30px;
+            // Убираем ограничение по ширине
+            max-width: 100%;
+        }
+    }
+
+    // Позиционирование .about__subtitle1 в области title1
+    &__subtitle1 {
+        grid-area: title1;
+    }
+
+    // Позиционирование .about__text1 в области text1
+    &__text1 {
+        grid-area: text1;
+    }
+
+    &__picture1 {
+        // Позиционирование в области pic1
+        grid-area: pic1;
+        // Относительное позиционирование
+        position: relative;
+
+        // Псевдоэлемент для создания пропорционального отступа
+        &::before {
+            content: '';
+            display: block;
+            // Отступ сверху: 66.3218% от ширины
+            padding-top: 66.3218%;
+            width: 100%;
+        }
+    }
+
+    &__img1 {
+        // Абсолютное позиционирование
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        // Обрезка изображения по размеру контейнера
+        object-fit: cover;
+    }
+
+    &__subtitle2 {
+        // Позиционирование в области title2
+        grid-area: title2;
+        // Внешний отступ сверху: 50px
+        margin: 50px 0 0;
+
+        // для экранов шириной до 1020px
+        @media @bw1020 {
+            // Уменьшение отступа сверху до 30px
+            margin-top: 30px;
+        }
+    }
+
+    &__text2 {
+        // Позиционирование в области text2
+        grid-area: text2;
+
+        // для экранов шириной до 1020px
+        @media @bw1020 {
+            // Ограничение максимальной ширины до 350px
+            max-width: 350px;
+        }
+    }
+
+    &__picture2 {
+        // Позиционирование в области pic2
+        grid-area: pic2;
+        // Выравнивание по нижнему краю
+        align-self: flex-end;
+        // Относительное позиционирование
+        position: relative;
+
+        // Псевдоэлемент для создания пропорционального отступа
+        &::before {
+            content: '';
+            display: block;
+            // Отступ сверху: 122.029% от ширины
+            padding-top: 122.029%;
+            width: 100%;
+        }
+    }
+
+    &__img2 {
+        // Абсолютное позиционирование
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        // Обрезка изображения по размеру контейнера
+        object-fit: cover;
+    }
+
+    &__block3 {
+        // Внешний отступ сверху: 110px
+        margin: 110px 0 0;
+        // Использование CSS Grid для создания сетки
+        display: grid;
+        // Определение колонок: 1 часть и 344px
+        grid-template-columns: 1fr 344px;
+        // Определение областей сетки
+        grid-template-areas: "pic3 content";
+        // Расстояние между элементами: 60px
+        gap: 60px;
+
+        // для экранов шириной до 1020px
+        @media @bw1020 {
+            // Переключение на flex-контейнер
+            display: flex;
+            // Направление элементов: вертикальное
+            flex-direction: column;
+            // Расстояние между элементами: 80px
+            gap: 80px;
+        }
+
+        // для экранов шириной до 600px
+        @media @bw600 {
+            // Уменьшение расстояния между элементами до 60px
+            gap: 60px;
+        }
+    }
+
+    &__picture3 {
+        // Позиционирование в области pic3
+        grid-area: pic3;
+        display: block;
+        // Максимальная ширина: 930px
+        max-width: 930px;
+        width: 100%;
+        // Учёт padding и border в ширине элемента
+        box-sizing: border-box;
+        // Относительное позиционирование
+        position: relative;
+        // Внутренние отступы: 18px сверху, 19px справа, 0 снизу, 49px слева
+        padding: 18px 19px 0 49px;
+
+        // Псевдоэлемент для создания фона
+        &::before {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            right: 0;
+            // Высота: 64.7% от ширины
+            height: 64.7%;
+            // Цвет фона: красный (переменная @red)
+            background-color: @red;
+        }
+
+        // Псевдоэлемент для создания пропорционального отступа
+        &::after {
+            content: "";
+            display: block;
+            width: 100%;
+            // Отступ сверху: 40.86% от ширины
+            padding-top: 40.86%;
+        }
+    }
+
+    &__picture3-img {
+        // Абсолютное позиционирование
+        position: absolute;
+        top: 19px;
+        left: 49px;
+        // Ширина: 100% минус 57px
+        width: calc(100% - 57px);
+        // Обрезка изображения по размеру контейнера
+        object-fit: contain;
+    }
+
+    &__block3-content {
+        // Позиционирование в области content
+        grid-area: content;
+        // Выравнивание по нижнему краю
+        align-self: flex-end;
+        // Использование flex-контейнера
+        display: flex;
+        // Направление элементов: вертикальное
+        flex-direction: column;
+        // Расстояние между элементами: 90px
+        gap: 90px;
+
+        // для экранов шириной до 1020px
+        @media @bw1020 {
+            // Направление элементов: горизонтальное
+            flex-direction: row;
+            // Расстояние между элементами: 166px
+            gap: 166px;
+        }
+
+        // для экранов шириной до 600px
+        @media @bw600 {
+            // Направление элементов: вертикальное
+            flex-direction: column;
+            // Расстояние между элементами: 30px
+            gap: 30px;
+            // Выравнивание элементов по центру
+            align-items: center;
+        }
+    }
+
+    &__block3-link {
+        // Использование flex-контейнера
+        display: flex;
+        // Распределение пространства между элементами
+        justify-content: space-between;
+        // Максимальная ширина: 344px
+        max-width: 344px;
+        width: 100%;
+        // Выравнивание элементов по центру
+        align-items: center;
+        // Убираем подчёркивание у ссылки
+        text-decoration: none;
+
+        // для экранов шириной до 1020px
+        @media @bw1020 {
+            // Уменьшение максимальной ширины до 262px
+            max-width: 262px;
+            width: 100%;
+        }
+
+        // для экранов шириной до 600px
+        @media @bw600 {
+            // Увеличение максимальной ширины до 280px
+            max-width: 280px;
+        }
+    }
+}

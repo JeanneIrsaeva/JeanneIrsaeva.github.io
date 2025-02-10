@@ -23,11 +23,11 @@
   width: 100%;
 
   @media @bw1660{
-      max-width: 664px;
+      max-width: 604px;
   }
 
   @media @bw1340{
-      max-width: 504px;
+      max-width: 604px;
   }
 }
 
@@ -44,4 +44,39 @@
   overflow: hidden !important;
   visibility: hidden !important;
   pointer-events: none !important;
+}
+
+.show-nav{
+  body{
+      @media @bw1020{
+          overflow: hidden;
+      }
+  }
+
+  .page-header__nav{
+      @media @bw1020{
+          transform: translateX(0);
+      }
+  }
+
+  .page-header__nav-toggle{
+      &::before{
+          transform: translate(0px, 6px) rotate(45deg);
+          box-shadow: none;
+      }
+
+      &::after{
+          transform: translate(0px, -6px) rotate(-45deg);
+      }
+  }
+}
+
+.show-event-pp{
+  body{
+      overflow: hidden;
+  }
+
+  #js-eventPP{
+      display: flex;
+  }
 }

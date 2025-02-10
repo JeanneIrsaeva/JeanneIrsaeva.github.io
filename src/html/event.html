@@ -8,6 +8,7 @@
     <main class="main">
         <div class="event">
             <div class="event__container">
+                @@include('blocks/event-preview.html')
                 <div class="event__content content">
                     <h5>Программа мероприятий</h5>
     
@@ -43,14 +44,17 @@
                         <li>Paradise </li>
                     </ol>
                 </div>
-                <article class="event-reserve">
-                    @@include('blocks/reserve.html')
-                </article>
+                @@include('blocks/reserve.html')
             </div>
         </div>
     </main>
 
     <!-- prettier-ignore -->
     @@include('blocks/page-footer.html')
+
+    <script src="scripts/jquery.validate.js"></script>
+    
+    <script src="scripts/jquery.validate-init.js"></script>
+    <script src="scripts/main.min.js"></script>
 </body>
 </html>
