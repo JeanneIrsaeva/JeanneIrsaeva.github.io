@@ -1,203 +1,202 @@
-.table{
-    border-collapse: collapse;
-    width: 100%;
-    color: @black;
-    text-align: center;
+.table { 
+    border-collapse: collapse; // Убирает двойные границы между ячейками таблицы
+    width: 100%; // Устанавливает ширину таблицы на 100% от родительского элемента
+    color: @black; // Устанавливает цвет текста
+    text-align: center; // Выравнивает текст по центру
 
-    @media @bw768 {
-        margin: 0 -20px;
-        display: block;
-        width: calc(100% + 40px);
+    @media @bw768 { // для экранов шириной до 768px
+        margin: 0 -20px; // Убирает внешние отступы по бокам
+        display: block; // Меняет таблицу на блочный элемент
+        width: calc(100% + 40px); // Увеличивает ширину таблицы на 40px
     }
 
-    &__head {
-        @media @bw768 {
-            display: block;
-        }
-    }
-
-    &__head-tr {
-        @media @bw768 {
-            display: flex;
+    &__head { 
+        @media @bw768 { // для экранов шириной до 768px
+            display: block; // Меняет элемент на блочный
         }
     }
 
-    &__tr{
-        &:nth-child(2n-1){
-            background-color: fade(@black, 3%);
-        }
-
-        @media @bw768 {
-            display: flex;
-            flex-wrap: wrap;
+    &__head-tr { 
+        @media @bw768 { // для экранов шириной до 768px
+            display: flex; // Включает flex-контейнер
         }
     }
 
-    &__head-th{
-        height: 85px;
-        font-weight: 600;
-        font-size: 18px;
-        line-height: 1.3;
-
-        @media @bw768 {
-            box-sizing: border-box;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 33.3333%;
-            height: auto;
+    &__tr {
+        &:nth-child(2n-1) { // Стили для нечетных строк
+            background-color: fade(@black, 3%); // Устанавливает фоновый цвет с прозрачностью 3%
         }
 
-        &:first-child {
-            @media @bw768 {
-                display: none;
+        @media @bw768 { // для экранов шириной до 768px
+            display: flex; // Включает flex-контейнер
+            flex-wrap: wrap; // Позволяет переносить элементы на новую строку
+        }
+    }
+
+    &__head-th { 
+        height: 85px; // Устанавливает высоту элемента
+        font-weight: 600; // Устанавливает жирность шрифта
+        font-size: 18px; // Устанавливает размер шрифта
+        line-height: 1.3; // Устанавливает высоту строки
+
+        @media @bw768 { // для экранов шириной до 768px
+            box-sizing: border-box; 
+            display: flex; 
+            justify-content: center; // Выравнивает содержимое по центру
+            align-items: center; // Выравнивает содержимое по вертикали
+            width: 33.3333%; // Устанавливает ширину элемента
+            height: auto; // Автоматическая высота
+        }
+
+        &:first-child { 
+            @media @bw768 { // для экранов шириной до 768px
+                display: none; // Скрывает элемент
             }
         }
     }
 
-    &__td{
-        box-sizing: border-box;
-        height: 50px;
-        padding: 12px;
-        border: 1px solid #BFBFBF;
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 1.3;
+    &__td { 
+        box-sizing: border-box; 
+        height: 50px; 
+        padding: 12px; // Устанавливает внутренние отступы
+        border: 1px solid #BFBFBF; // Устанавливает границу
+        font-weight: 600; // Устанавливает жирность шрифта
+        font-size: 16px; // Устанавливает размер шрифта
+        line-height: 1.3; // Устанавливает высоту строки
 
-        &:last-child{
-            border-right: none;
-            padding-right: 0;
+        &:last-child { 
+            border-right: none; // Убирает правую границу
+            padding-right: 0; // Убирает правый отступ
         }
 
-        @media @bw768 {
-            display: block;
-            width: 33.3333%;
-        }
-    }
-
-    &__body {
-        @media @bw768 {
-            display: block;
+        @media @bw768 { // для экранов шириной до 768px
+            display: block; // Меняет элемент на блочный
+            width: 33.3333%; // Устанавливает ширину элемента
         }
     }
 
-    &__body-th {
-        box-sizing: border-box;
-        height: 50px;
-        padding: 10px 10px 10px 0;
-        border-top: 1px solid #BFBFBF;
-        border-bottom: 1px solid #BFBFBF;
-        font-weight: 400;
-        font-size: 18px;
-        line-height: 25px;
-        text-align: left;
-
-        @media @bw768 {
-            display: block;
-            width: 100%;
-            min-height: 50px;
-            height: auto;
-            text-align: center;
+    &__body { 
+        @media @bw768 { // Медиа-запрос для экранов шириной до 768px
+            display: block; // Меняет элемент на блочный
         }
     }
 
-    &__footer {
-        @media @bw768 {
-            display: block;
+    &__body-th { 
+        box-sizing: border-box; 
+        height: 50px; // Устанавливает высоту элемента
+        padding: 10px 10px 10px 0; // Устанавливает внутренние отступы
+        border-top: 1px solid #BFBFBF; // Устанавливает верхнюю границу
+        border-bottom: 1px solid #BFBFBF; // Устанавливает нижнюю границу
+        font-weight: 400; // Устанавливает жирность шрифта
+        font-size: 18px; // Устанавливает размер шрифта
+        line-height: 25px; // Устанавливает высоту строки
+        text-align: left; // Выравнивает текст по левому краю
+
+        @media @bw768 { // для экранов шириной до 768px
+            display: block; // Меняет элемент на блочный
+            width: 100%; // Устанавливает ширину элемента
+            min-height: 50px; // Устанавливает минимальную высоту
+            height: auto; // Автоматическая высота
+            text-align: center; // Выравнивает текст по центру
         }
     }
 
-    &__footer-tr {
-        @media @bw768 {
-            display: flex;
+    &__footer { 
+        @media @bw768 { // для экранов шириной до 768px
+            display: block; 
         }
     }
 
-    &__footer-th{
-        height: 60px;
-        font-size: 0;
+    &__footer-tr { 
+        @media @bw768 { // для экранов шириной до 768px
+            display: flex; // Включает flex-контейнер
+        }
+    }
 
-        @media @bw768 {
-            font-size: 16px;
-            font-weight: 300;
-            width: 33.3333%;
+    &__footer-th { 
+        height: 60px; // Устанавливает высоту элемента
+        font-size: 0; // Скрывает текст
+
+        @media @bw768 { // для экранов шириной до 768px
+            font-size: 16px; // Устанавливает размер шрифта
+            font-weight: 300; // Устанавливает жирность шрифта
+            width: 33.3333%; // Устанавливает ширину элемента
         }
 
-        &:first-child {
-            @media @bw768 {
-                display: none;
+        &:first-child { 
+            @media @bw768 { // для экранов шириной до 768px
+                display: none; // Скрывает элемент
             }
         }
     }
 
     &__head-th,
-    &__footer-th {
-        box-sizing: border-box;
-        padding: 10px;
-        border-right: 1px solid #BFBFBF;
-        text-transform: uppercase;
+    &__footer-th { 
+        box-sizing: border-box; 
+        padding: 10px; // Устанавливает внутренние отступы
+        border-right: 1px solid #BFBFBF; // Устанавливает правую границу
+        text-transform: uppercase; // Преобразует текст в верхний регистр
 
-        &:first-child {
-            padding-left: 0;
+        &:first-child { 
+            padding-left: 0; // Убирает левый отступ
         }
 
-        &:last-child {
-            border-right: none;
-            padding-right: 0;
-        }
-    }
-
-    &__title {
-        font-weight: 400;
-        padding: 16px 50px;
-
-        @media @bw1340{
-            padding: 16px 40px;
-        }
-    
-        @media @bw768{
-            padding: 14px 20px;
-        }
-    
-        @media @bw600{
-            font-size: 16px;
-            max-width: 280px;
+        &:last-child { 
+            border-right: none; // Убирает правую границу
+            padding-right: 0; // Убирает правый отступ
         }
     }
 
-    &__title-description {
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 21.79px;
-        text-align: left;
-        max-width: 868px;
-        height: auto;
-        margin: 0;
-        padding-bottom: 60px;
+    &__title { 
+        font-weight: 400; // Устанавливает жирность шрифта
+        padding: 16px 50px; // Устанавливает внутренние отступы
+
+        @media @bw1340 { // для экранов шириной до 1340px
+            padding: 16px 40px; // Изменяет внутренние отступы
+        }
+
+        @media @bw768 { // для экранов шириной до 768px
+            padding: 14px 20px; // Изменяет внутренние отступы
+        }
+
+        @media @bw600 { // для экранов шириной до 600px
+            font-size: 16px; // Устанавливает размер шрифта
+            max-width: 280px; // Устанавливает максимальную ширину
+        }
+    }
+
+    &__title-description { 
+        font-size: 16px; // Устанавливает размер шрифта
+        font-weight: 400; // Устанавливает жирность шрифта
+        line-height: 21.79px; // Устанавливает высоту строки
+        text-align: left; // Выравнивает текст по левому краю
+        max-width: 868px; // Устанавливает максимальную ширину
+        height: auto; // Автоматическая высота
+        margin: 0; // Убирает внешние отступы
+        padding-bottom: 60px; // Устанавливает нижний отступ
     }
 }
 
+.ok { 
+    display: block; // Устанавливает элемент как блочный
+    position: relative; // Устанавливает относительное позиционирование
+    width: 26px; // Устанавливает ширину элемента
+    height: 26px; // Устанавливает высоту элемента
+    border-radius: 50%; // Делает элемент круглым
+    margin: auto; // Центрирует элемент
+    background-color: @black; // Устанавливает фоновый цвет 
 
-.ok{
-    display: block;
-    position: relative;
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
-    margin: auto;
-    background-color: @black;
-
-    &::after{
-        content: "";
-        box-sizing: border-box;
-        display: block;
-        position: absolute;
-        top: 4px;
-        left: 9px;
-        width: 8px;
-        height: 14px;
-        border-right: 2px solid @white;
-        border-bottom: 2px solid @white;
-        transform: rotate(45deg);
+    &::after { // Псевдоэлемент для создания галочки
+        content: ""; // Устанавливает содержимое псевдоэлемента
+        box-sizing: border-box; 
+        display: block; 
+        position: absolute; // Устанавливает абсолютное позиционирование
+        top: 4px; // Позиционирование сверху
+        left: 9px; // Позиционирование слева
+        width: 8px; // Устанавливает ширину
+        height: 14px; // Устанавливает высоту
+        border-right: 2px solid @white; // Устанавливает правую границу 
+        border-bottom: 2px solid @white; // Устанавливает нижнюю границу 
+        transform: rotate(45deg); // Поворачивает элемент на 45 градусов
     }
 }
